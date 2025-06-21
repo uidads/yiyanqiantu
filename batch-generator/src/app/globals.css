@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 242 242 247;
+    --foreground: 28 28 30;
+    --card: 255 255 255;
+    --card-foreground: 28 28 30;
+    --popover: 255 255 255;
+    --popover-foreground: 28 28 30;
+    --primary: 0 122 255;
+    --primary-foreground: 255 255 255;
+    --secondary: 229 229 234;
+    --secondary-foreground: 72 72 74;
+    --muted: 229 229 234;
+    --muted-foreground: 142 142 147;
+    --accent: 229 229 234;
+    --accent-foreground: 72 72 74;
+    --destructive: 255 59 48;
+    --destructive-foreground: 255 255 255;
+    --border: 209 209 214;
+    --input: 229 229 234;
+    --ring: 0 122 255;
+    --radius: 12px;
+  }
+
+  .dark {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+    --card: 28 28 30;
+    --card-foreground: 255 255 255;
+    --popover: 28 28 30;
+    --popover-foreground: 255 255 255;
+    --primary: 0 122 255;
+    --primary-foreground: 255 255 255;
+    --secondary: 58 58 60;
+    --secondary-foreground: 255 255 255;
+    --muted: 58 58 60;
+    --muted-foreground: 142 142 147;
+    --accent: 58 58 60;
+    --accent-foreground: 255 255 255;
+    --destructive: 255 59 48;
+    --destructive-foreground: 255 255 255;
+    --border: 58 58 60;
+    --input: 58 58 60;
+    --ring: 0 122 255;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sf;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-apple border border-white/20 shadow-apple;
+  }
+
+  .glass-card-dark {
+    @apply bg-black/40 backdrop-blur-apple border border-white/10 shadow-apple-dark;
+  }
+
+  .apple-button {
+    @apply inline-flex items-center justify-center rounded-apple px-4 py-2 text-sm font-medium transition-all duration-200 ease-out;
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  .apple-button-primary {
+    @apply apple-button bg-apple-blue text-white hover:bg-apple-blue/90;
+  }
+
+  .apple-button-secondary {
+    @apply apple-button bg-apple-gray-100 text-apple-gray-700 hover:bg-apple-gray-200;
+  }
+
+  .status-indicator {
+    @apply w-3 h-3 rounded-full flex items-center justify-center;
+  }
+
+  .status-pending {
+    @apply status-indicator bg-apple-gray-300;
+  }
+
+  .status-generating {
+    @apply status-indicator bg-apple-orange animate-pulse;
+  }
+
+  .status-success {
+    @apply status-indicator bg-apple-green;
+  }
+
+  .status-error {
+    @apply status-indicator bg-apple-red;
+  }
+} 
